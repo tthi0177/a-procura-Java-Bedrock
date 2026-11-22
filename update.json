@@ -1,0 +1,11 @@
+{
+  "version": "1.1.0",
+  "versionCode": 110,
+  "packageName": "com.aprocurajavabedrock.tthi0177",
+  "appName": "A Procura Java/Bedrock",
+  "author": "tthi0177 (Thiago)",
+  "apkUrl": "https://github.com/tthi0177/a-procura-java-bedrock/releases/download/v1.1.0/A-Procura-Java-Bedrock-v1.1.0.apk",
+  "changelog": "Versão 1.1.0 Oficial:\n- Suporte completo ao Java e Bedrock\n- Gerenciador de Launchers Java (Bettly, Zalite, Mojo)\n- Permissões de arquivos e suporte ao Shizuku\n- Sistema de atualização automática",
+  "mandatory": false,
+  "publishedAt": "2025-05-18T12:00:00Z"
+}
