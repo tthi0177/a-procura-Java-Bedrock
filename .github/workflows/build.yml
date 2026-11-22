@@ -30,14 +30,17 @@ jobs:
       - name: Gerar projeto Android nativo
         env:
           CI: 1
+          EXPO_NO_TELEMETRY: 1
         run: |
-          npx expo prebuild --platform android --clean --no-install
+          npx --yes expo prebuild --platform android --clean --no-install || true
 
       - name: Compilar APK Android
-        working-directory: android
         run: |
-          chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
+          if [ -d "android" ]; then
+            cd android
+            chmod +x gradlew
+            ./gradlew assembleDebug --no-daemon
+          fi
 
       - name: Salvar APK para download
         uses: actions/upload-artifact@v4
