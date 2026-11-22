@@ -23,9 +23,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Configurar Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Instalar dependências
         run: |
           npm install --legacy-peer-deps
@@ -42,10 +39,8 @@ jobs:
           if [ -d "android" ]; then
             cd android
             chmod +x gradlew
-            ./gradlew assembleDebug --no-daemon --stacktrace
-          else
-            echo "Pasta android não encontrada, gerando via expo..."
-            npx expo run:android --no-install || true
+            yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+            ./gradlew assembleDebug --no-daemon
           fi
 
       - name: Salvar APK para download
@@ -54,4 +49,4 @@ jobs:
           name: A-Procura-Java-Bedrock-v1.1.0
           path: |
             android/app/build/outputs/apk/debug/*.apk
-            android/app/build/outputs/apk/**/*.apk
+            android/app/build/outputs/apk/**/*.apk 
