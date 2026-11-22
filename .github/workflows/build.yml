@@ -31,23 +31,16 @@ jobs:
         env:
           CI: 1
         run: |
-          npx expo prebuild --platform android --clean --no-install || npx expo run:android --no-build-cache || true
+          npx expo prebuild --platform android --clean --no-install
 
-      - name: Criar projeto Android caso necessário e Compilar APK
+      - name: Compilar APK Android
+        working-directory: android
         run: |
-          if [ -d "android" ]; then
-            cd android
-            chmod +x gradlew
-            ./gradlew assembleRelease --no-daemon
-          else
-            echo "Tentando compilar via EAS local..."
-            npx eas-cli build --platform android --profile preview --local --output ./app-release.apk || true
-          fi
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
 
       - name: Salvar APK para download
         uses: actions/upload-artifact@v4
         with:
           name: A-Procura-Java-Bedrock-v1.1.0
-          path: |
-            android/app/build/outputs/apk/**/*.apk
-            *.apk
+          path: android/app/build/outputs/apk/debug/*.apk
