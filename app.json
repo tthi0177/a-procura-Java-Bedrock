@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "A Procura Java/Bedrock",
+    "slug": "a-procura-java-bedrock",
+    "version": "1.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0f1115"
+    },
+    "android": {
+      "package": "com.aprocurajavabedrock.tthi0177",
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "backgroundColor": "#10b981"
+      },
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "MANAGE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
