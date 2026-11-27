@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "A Procura Java/Bedrock",
+    "slug": "a-procura-java-bedrock",
+    "version": "1.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": { "backgroundColor": "#111317" },
+    "android": { "package": "com.aprocurajavabedrock.tthi0177" }
+  }
+}
